@@ -4,16 +4,33 @@
 しまったりすることがない、ということである。  
 
 標準入力で与えられる文字列に対して全ての括弧が入れ子になっていればGoodを、正しくなければBadを標準出力に出力する。入力される文字列は512文字以下であると仮定する。  
-
-入力例                                     　　　　　　 　　　　　　　　出力例　　  
-{<apple>(and)([banana]and[mikan])}　　　　　　　　　　  　　　　　　　　Good  
-    
-app(le)[ an]d ba<nana((and m))ikan[]{}>               　　　　　　　　Good  
   
-appl((e)((()))()) and [b[a[n[ana]]<>]{<>}]and mikan   　　　　　　　　Good  
-
-apple(and)banana and>mikan                     　　　　　　　　       Bad  
-  　　　　　　　　　　　　　　　　　　　　　　　　　　
-apple[and]banana<and mikan                     　　　　　　　　       Bad  
+入力例1                                                                 　　  
+{<apple>(and)([banana]and[mikan])}                       
+      
+Good    
   
-apple(and<banana)and>mikan                            　　　　　　　　Bad  
+入力例2  
+app(le)[ an]d ba<nana((and m))ikan[]{}>                              
+  
+Good    
+  
+入力例3  
+appl((e)((()))()) and [b[a[n[ana]]<>]{<>}]and mikan                    
+  
+Good      
+  
+入力例4  
+apple(and)banana and>mikan                                             
+  
+Bad      
+  
+入力例5  
+apple[and]banana<and mikan                                             
+  
+Bad    
+  
+入力例6  
+apple(and<banana)and>mikan                                
+  
+Bad    
